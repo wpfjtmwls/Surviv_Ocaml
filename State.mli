@@ -67,9 +67,8 @@ val num_players: State -> int
  * will be minor. *)
 val tick: State -> int -> State
 
-(* [update st ms update] is the new state after ms milliseconds
- * have passed and the StateUpdate has taken effect. *)
-val update: State -> int -> StateUpdate -> State
+(* [update st input client_id] is the new state registering the client's input. *)
+val update: State -> ClientController.input -> str ->  State
 
 (* Takes Player to center on (and display health etc), width and height,
  * and returns the image to display on the client. *)

@@ -3,6 +3,8 @@
 State state;
 State lastState; (* Old state used for interpolation. *)
 
+string player_name; (* Should be unique. *)
+
 (* Abstract form of input. For example, 'W' and the up arrow could both correspond to UP.
  * The int corresponds to the number of milliseconds the input has been down for. *)
 type input =
