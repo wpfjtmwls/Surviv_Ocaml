@@ -12,8 +12,6 @@ type input =
 	| RIGHT of int
 	| FIRE 	of int
 
-(* tell server either started turning right or stopped turning right AFTER CERTAIN TIME *)
-
 (* Call send_input_start on the input *)
 val on_key_down: event -> ()
 
