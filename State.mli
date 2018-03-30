@@ -43,3 +43,29 @@ val update: State -> State
 (* Takes Player to center on (and display health etc), width and height,
  * and returns the image to display on the client. *)
 val to_image: State -> Player -> int -> int -> Dom_html.imageElement
+
+(* Get information about the player *)
+module type playerinfo = sig 
+	type player
+
+	(* Initialize *)
+	val player_from_req : request -> player
+	
+	(* Position functions *)
+	val getPos : player -> (float * float)
+
+	val getX : player -> float
+
+	val getY : player -> float
+
+	val setPos : player -> (float * float) -> player
+
+	val setX : player -> float -> player
+
+	val setY : player -> float -> player
+
+	(* Health functions *)
+	val getHealth : player -> int 
+
+	val setHealth : player -> int -> player
+end 
