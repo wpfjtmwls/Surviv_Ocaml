@@ -71,12 +71,6 @@ val tick: State -> int -> State
  * have passed and the StateUpdate has taken effect. *)
 val update: State -> int -> StateUpdate -> State
 
-(* used to convert state to UDP packet *)
-val to_string: State -> string
-
-(* used to convert UDP packet to state *)
-val to_state: string -> State
-
 (* Takes Player to center on (and display health etc), width and height,
  * and returns the image to display on the client. *)
 val to_image: State -> Player -> int -> int -> Dom_html.imageElement
@@ -105,4 +99,4 @@ module type playerinfo = sig
 	val getHealth : player -> int 
 
 	val setHealth : player -> int -> player
-end 
+end
